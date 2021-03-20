@@ -5,7 +5,7 @@ Chris masih berkutat dengan komputernya. Dia menyayangkan kemampuan komputernya 
 
 Hint:
 Kemampuan aplikasi bawaan masih kurang cukup kuat untuknya, barangkali ada cara lain yang lebih praktis yang dia lakukan.
-
+[attachment](https://drive.google.com/file/d/1NRkySjE2hB4mYVbNPEwtewM7Ny084RN4/view?usp=sharing)
 ## Solusi
 [Solusi](Workaround_Solution.pdf)
 

@@ -5,7 +5,7 @@ Chris terasa... aneh. Di depan dia hanya seorang staff IT pelupa yang sering sen
 
 Hint:
 Sudahkah aku menyebutkan dia pelupa?
-
+[attachment](https://drive.google.com/file/d/14Vy_hB4J_OGntWKkIsmPSay2alDP1b7M/view?usp=sharing)
 ## Solusi
 [Solusi](Forget_it_Solution.pdf)
 #### ara2021{i_suppose_sticky_notes_was_made_for_information_to_stick_around}
