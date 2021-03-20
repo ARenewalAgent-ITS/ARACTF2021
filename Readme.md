@@ -17,47 +17,47 @@ Jadwal kompetisi ARACTF 2021:
 
 ## Penyisihan
 ---
-#### - Forensic
+#### - (Penyisihan/Forensic)
 - Jack Sparrow
 - Lihat Sebelah Barat
 - The Lady Sound
 - Hub
-#### - Cryptography
+#### - [Cryptography](Penyisihan/Cryptography)
 - Kode Rahasia
 - Dewan Kunci
 - Can You Control This?
 - Big Dict
-#### - Web Exploitation
+#### - [Web Exploitation](Penyisihan/Web-Exploitation)
 - HOME
 - Not Secure
 - Oven
-#### - Binary Exploitation
+#### - [Binary Exploitation](Penyisihan/Binary-Exploitation)
 - WELCOME
 - Dream
 - Empty_heart
-#### - Misc
+#### - [Misc](Penyisihan/Misc)
 - we promise no shit
 - 0.zip
 - Gordon
-#### - Reverse Engineering
+#### - [Reverse Engineering](Penyisihan/Reverse-Engineering)
 - cocomilk?
 - Secure Password Manager v1
 - Fire Wheel
 ### Final
 ---
-#### - Forensic
+#### - [Forensic](Final/Forensic)
 - Forget it
 - Workaround
-#### - Cryptography
+#### - [Cryptography](Final/Cryptography)
 - Kalangkabut
 - Really Safe Algorithm?
-#### - Web Exploitation
+#### - [Web Exploitation](Final/Web-Exploitation)
 - Online Notes Storage
 - Pengembang Saltik
 - Under Development
-#### - Binary Exploitation
+#### - [Binary Exploitation](Final/Binary-Exploitation)
 - ara_note
 - bad_game
-#### - Reverse Engineering
+#### - [Reverse Engineering](Final/Reverse-Engineering)
 - Secure Password Manager v2
 - Flag Storage
