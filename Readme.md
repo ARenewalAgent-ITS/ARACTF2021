@@ -1,13 +1,18 @@
 # ARACTF 2021 
 ---
+CTF adalah salah satu bentuk kegiatan hacking yang mengharuskan seseorang/tim untuk menemukan file yang telah disembunyikan sedemikian rupa dalam bentuk file maupun string (teks) yang selanjutnya disebut dengan “Flag”. Kompetisi CTF ini ditujukan bagi mahasiswa aktif PTN/PTS se-Indonesia.Babak
 
+Jadwal kompetisi ARACTF 2021:
+- Pemanasan : Sabtu, 6 Maret 2021
+- Penyisihan : Minggu, 7 Maret 2021
+- final : Minggu, 21 Maret 2021
 ## Pemanasan
 ---
-#### - Forensic
+#### - [Forensic](Pemanasan/Forensic)
 - Recover it!
 - PUZZLE
 - Koki Yang Handal
-#### - Cryptography
+#### - [Cryptography](Pemanasan/Cryptography)
 - Toko Online
 
 ## Penyisihan
@@ -25,7 +30,7 @@
 #### - Web Exploitation
 - HOME
 - Not Secure
-- Suspicious
+- Oven
 #### - Binary Exploitation
 - WELCOME
 - Dream
@@ -49,6 +54,7 @@
 #### - Web Exploitation
 - Online Notes Storage
 - Pengembang Saltik
+- Under Development
 #### - Binary Exploitation
 - ara_note
 - bad_game
