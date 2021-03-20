@@ -17,7 +17,7 @@ Jadwal kompetisi ARACTF 2021:
 
 ## Penyisihan
 ---
-#### - (Penyisihan/Forensic)
+#### - [Forensic](Penyisihan/Forensic)
 - Jack Sparrow
 - Lihat Sebelah Barat
 - The Lady Sound
