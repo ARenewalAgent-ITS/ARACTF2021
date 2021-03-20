@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+	<div class="col-md-4 col-md-offset-4">
+		<div>
+			<p>Welkam <%= name %></p>
+		</div>
+		<div class="abc">
+			<a href="/logout">Logout</a>
+		</div>
+	</div>
+	<div class="col-md-4 col-md-offset-4">
+		<div>
+			<p>Message for you</p>
+		</div>
+		<div>
+			<center>
+				<table class="table table-hover text-center">
+					<thead>
+						<tr>
+							<th>From</th>
+							<th>Message</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<% messages.forEach(function(message) { %>
+							<tr>
+								<td style="text-align:left"><%- message.from %></td>
+								<td style="text-align:left"><%= message.message%></td>
+							</tr>
+						<% }); %>
+					</tbody>
+				</table>
+			</center>
+		</div>
+	</div>
+
+	<div class="col-md-4 col-md-offset-4">
+		<div>
+			<p>Write massage for admon</p>
+		</div>
+		<div class="form-group">
+			<form id="form2" method="post">
+				<input type="text" name="message" placeholder="Message" required="" maxlength="10" class="form-control"><br/>
+				<input type="submit" value="Send" class="btn btn-success">
+			</form>
+		</div>
+		<!-- TO DO Another form to send message to another users -->
+		<div class="mssg bg-danger">
+			<span id="check"></span>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="node_modules/jquery-serializejson/jquery.serializejson.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			$( "#form2" ).submit(function(event) {
+				event.preventDefault();
+
+				$.ajax({
+					type: 'POST',
+					url: '/profile',
+					data: $("#form2").serialize(),
+					dataType: "json",
+					success: function(response){
+						$('#form2')[0].reset();
+
+						document.getElementById("check").innerHTML=response.Success;
+         					setTimeout(function(){
+         						document.getElementById("check").innerHTML="";
+         					},3000);
+         					if (response.Success=="Your message has been sent") {
+         						document.getElementById("aa").click();
+         					};
+         				},
+         				error: function() {
+         				}
+         			})
+			});
+		});
+	</script>
+</body>
+</html>

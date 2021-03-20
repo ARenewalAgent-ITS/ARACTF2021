@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+	<div class="col-md-4 col-md-offset-4">
+		<div>
+			<p>Welkam ADMEEN</p>
+		</div>
+		<div class="abc">
+			<a href="/logout">Logout</a>
+		</div>
+	</div>
+	<div class="col-md-4 col-md-offset-4">
+		<div>
+			<p>Message for you</p>
+		</div>
+		<div>
+			<center>
+				<table class="table table-hover text-center">
+					<thead>
+						<tr>
+							<th>From</th>
+							<th>Message</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<% messages.forEach(function(messages) { %>
+							<tr>
+								<td style="text-align:left"><%- messages.from %></td>
+								<td style="text-align:left"><%= messages.message%></td>
+							</tr>
+						<% }); %>
+					</tbody>
+				</table>
+			</center>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+</body>
+</html>
