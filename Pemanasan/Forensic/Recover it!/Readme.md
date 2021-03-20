@@ -11,6 +11,5 @@ Pada suatu hari PT. Telkom mendapat kiriman sebuah gambar dengan pesan "Gambar i
 6. Menyesuaikan hex dengan hex signature dari gif ![](6.JPG) ![](7.JPG)
 7. Setelah itu maka gif dapat dibuka ![](8.JPG)
 8. Mendekripsi pesan dengan base 64 
-![](9.JPG)
 
 #### ara2021{st3g4no_1s_v3ry_fun}
