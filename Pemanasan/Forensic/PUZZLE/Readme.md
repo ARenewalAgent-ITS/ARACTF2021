@@ -8,6 +8,7 @@ Diberikan sebuah PCAP dimana dideskripsinya sudah sangat jelas terdapat sebuah f
 ![](pict.png)
 
 Terlihat adanya pengunduhan file 1,5,3,2,4. Setelah itu tinggal export semua RAW file  tersebut dari stream 1 sampai 5 namai file sesuai urutan dari pengunduhan file.
+
 ![](pict2.png)
 
 Karena judulnya PUZZLE bisa ditebak kita harus mengurutkan file file tersebut dari 1 sampai  5 dan digabungkan akan menjadi sebuah file gambar berformat png. Disini saya sudah  membuatkan sebuh kodingan menggunakan python 
