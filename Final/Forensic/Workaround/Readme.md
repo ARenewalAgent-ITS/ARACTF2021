@@ -7,5 +7,6 @@ Hint:
 Kemampuan aplikasi bawaan masih kurang cukup kuat untuknya, barangkali ada cara lain yang lebih praktis yang dia lakukan.
 
 ## Solusi
+[Solusi](Workaround_Solution.pdf)
 
 #### ara2021{I_STILL_CANT_ROTATE_TEXT_HERE}
