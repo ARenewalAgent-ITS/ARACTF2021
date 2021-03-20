@@ -1,0 +1,3 @@
+FROM php:apache
+COPY home /var/www/html
+COPY flag3.txt /etc
