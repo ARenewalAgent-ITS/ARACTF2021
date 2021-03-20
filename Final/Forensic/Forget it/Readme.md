@@ -7,5 +7,5 @@ Hint:
 Sudahkah aku menyebutkan dia pelupa?
 
 ## Solusi
-
+[Solusi](Forget_it_Solution.pdf)
 #### ara2021{i_suppose_sticky_notes_was_made_for_information_to_stick_around}
