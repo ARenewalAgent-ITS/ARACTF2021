@@ -11,7 +11,7 @@ Jika dilihat, ada tag yang menarik bernama copyright dengan isi 4u90nAg9n8Q19pmf
 “f1atblne0a11820f1atblnetheAlpgj<<!!>>,,theAlpgj<<!!>>,01111011XY32.X.Yl//lmml.63mm2*l6.+7lml622336*26/X3YXYXXY./YY.2Y32C7CBi*66iC6C2BBB3i6B36i>AQJ>Q7[\C;|Q[M]\C;|Q[M]|G]B>S.201111101 “
 
 Setelah itu, untuk mengartikan kode tersebut kita bisa melihat dari gambar dan judul dimana disebutkan LSB(least significant bit).  Berikutnya, setiap karakter dalam kode tersebut diubah kedalam biner dan diambil digit paling belakangnya. Setelah diambil setiap digit paling belakang dari setiap karakter, maka semua digit tersebut disatukan lalu di translate ke bentuk char. Kode yang digunakan sebagai berikut
-
+```
 with open('dump.txt', 'rb') as f:\
     data = f.read().strip()\
 terakhir = [b & 1 for b in data]\
@@ -27,5 +27,6 @@ huruf = [chr(int(b, 2)) for b in kelompok]\
 print("mengubah dari biner ke char")\
 flag = "".join(huruf)\
 print(flag)\
+```
 
 #### ara2021{alphaisthegood}
