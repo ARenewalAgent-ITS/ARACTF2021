@@ -18,7 +18,7 @@ Clue : "You will find hamming is very useful"
 Act : soal ini hanya perlu diselesaikan menggunakan kode hamming saya
 Berikut adalah kode solver yang dapat digunakan
 
-
+```
 from math import ceil, log
 
 s = "1001111001000111100100011000001110111101101100010011000111100101011000001110111"
@@ -80,5 +80,5 @@ print(">>> Convert ke char")
 sol = "".join(chr(int(t[i:i+8], 2)) for i in range(0, len(t), 8))
 
 print(sol)
-
+```
 #### ara2021{tr0olLy0u}
