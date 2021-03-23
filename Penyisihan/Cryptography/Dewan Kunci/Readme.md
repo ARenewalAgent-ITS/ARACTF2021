@@ -8,7 +8,7 @@ Nama: Dewan Kunci\
 Cipher: zeq3p1z}nr5[xL;\sq2/7wjr7\irf,hrg.jr7w;[dedr;r8p60x6e{\
 Clue 1: lihat jari jemari anda, \
 Clue 2: lihat judul dan buka kamus bahasa inggris.\
-Format flag: ara2021{}\
+Format flag: ara2021{}
 
 Dari melihat cipher dan format flag, kemungkinan besar ini merupakan sandi subtitusi atau subtitution cipher. Letak kurung kurawal '{' yang ada di posisi terakhir cipher dan kurung kurawal '}' yang ada pada posisi ke-8 cipher sama seperti posisi kurung kurawal pada format flag menandakan hal tersebut. \
 
@@ -27,11 +27,11 @@ Melihat judul soal serta cluenya, dapat disimpulkan cipher ini berhubungan denga
 
 layout papan ketik yang digunakan:
     Lowercase:                                              Uppercase:
-    |1|2|3|4|5|6|7|8|9|0|-|=|                               |!|@|#|$|%|^|&|*|(|)|_|+|
-    |q|w|e|r|t|y|u|i|o|p|[|]|\|                             |Q|W|E|R|T|Y|U|I|O|P|{|}|||
-    |a|s|d|f|g|h|j|k|l|;|'|                                 |A|S|D|F|G|H|J|K|L|:|"|
-    |z|x|c|v|b|n|m|,|.|/|                                   |Z|X|C|V|B|N|M|<|>|?|
-\
+    |1|2|3|4|5|6|7|8|9|0|-|=|                               |!|@|#|$|%|^|&|*|(|)|_|+|\
+    |q|w|e|r|t|y|u|i|o|p|[|]|\|                             |Q|W|E|R|T|Y|U|I|O|P|{|}|||\
+    |a|s|d|f|g|h|j|k|l|;|'|                                 |A|S|D|F|G|H|J|K|L|:|"|\
+    |z|x|c|v|b|n|m|,|.|/|                                   |Z|X|C|V|B|N|M|<|>|?|\
+
 Terdapat pola perpindahan atau shift pattern yang jelas pada hasil analisis tersebut yakni atas, kanan, bawah, kiri yang berulang atau berputar searah jarum jam (↻). Pola tersebut diteruskan untuk mendekripsi seluruh cipher dan berhasil mengungkap flag berikut ini:\
 cipher:     zeq3p1z}nr5[xL;\sq2/7wjr7\irf,hrg.jr7w;[dedr;r8p60x6e{\
 shift:      ↑→↓←↑→↓←↑→↓←↑→↓←↑→↓←↑→↓←↑→↓←↑→↓←↑→↓←↑→↓←↑→↓←↑→↓←↑→↓←↑→\
