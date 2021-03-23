@@ -15,15 +15,17 @@ Dari melihat cipher dan format flag, kemungkinan besar ini merupakan sandi subti
 analisis 8 huruf pertama cipher:\
     zeq3p1z}\
     ara2021{\
-Melihat judul soal serta cluenya, dapat disimpulkan cipher ini berhubungan dengan keyboard alias papan ketik. Pada papan ketik, terlihat asosiasi yang jelas antara simbol pada cipher dengan simbol pada format flag yang berada di posisi yang sama. Sepertinya cipher yang digunakan adalah subtitusi papan ketik. Dari analisis subtitusi hurufnya didapatkan hasil sebagai berikut:\\
-    1. dari z ke a berpindah 1 posisi ke atas\
-    2. dari e ke r berpindah 1 posisi ke kanan\
-    3. dari q ke a berpindah 1 posisi ke bawah\
-    4. dari 3 ke 2 berpindah 1 posisi ke kiri\
-    5. dari p ke 0 berpindah 1 posisi ke atas\
-    6. dari 1 ke 2 berpindah 1 posisi ke kanan\
-    7. dari z ke 1 berpindah 1 posisi ke bawah\
-    8. dari } ke { berpindah 1 posisi ke kiri\
+Melihat judul soal serta cluenya, dapat disimpulkan cipher ini berhubungan dengan keyboard alias papan ketik. Pada papan ketik, terlihat asosiasi yang jelas antara simbol pada cipher dengan simbol pada format flag yang berada di posisi yang sama. Sepertinya cipher yang digunakan adalah subtitusi papan ketik. Dari analisis subtitusi hurufnya didapatkan hasil sebagai berikut:\
+```
+    1. dari z ke a berpindah 1 posisi ke atas
+    2. dari e ke r berpindah 1 posisi ke kanan
+    3. dari q ke a berpindah 1 posisi ke bawah
+    4. dari 3 ke 2 berpindah 1 posisi ke kiri
+    5. dari p ke 0 berpindah 1 posisi ke atas
+    6. dari 1 ke 2 berpindah 1 posisi ke kanan
+    7. dari z ke 1 berpindah 1 posisi ke bawah
+    8. dari } ke { berpindah 1 posisi ke kiri
+```
 ```
 layout papan ketik yang digunakan:
     Lowercase:                                              Uppercase:
