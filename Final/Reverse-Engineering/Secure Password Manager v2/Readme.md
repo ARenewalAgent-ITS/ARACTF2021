@@ -5,7 +5,7 @@ Untuk lebih mengamankan akun freefire ku aku menggunakan aplikasi secure passwor
 ## Solusi
 Diberikan sebuah file ELF yang dibuat menggunakan bahasa pemrograman GO. 
 Kita dapat mengetahui fungsi main dari program tersebut dengan cara melakukan penelusuran struktur fungsi main pada program golang yaitu main_main
-
+<img src="1.JPG"/>
 
 Selanjutnya kita tinggal melakukan analisis terhadap fungsi enkripsi yang ada dan ternyata algoritma yang diterapkan adalah RSA. Yang mana nilai q adalah komplemen dari p*2020. Selanjutnya kita tinggal mencari cara untuk mendapatkan private key dari RSA. Ternyata kita bisa mendapatkan nilai p dan q dengan melakukan akar kuadrat terhadap nilai yang telah ditemukan berdasarkan ke valid an nilai masknya ( kuadrat atau bukan ).
 
