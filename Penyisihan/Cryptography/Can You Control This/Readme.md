@@ -4,7 +4,7 @@
 Seseorang berkata kepada saya mengenai kontrol dan cek , namun saya tidak paham apa yang dimaksud orang itu hmmm.
 NB : Flag terbagi menjadi 2 bagian
 ## Solusi
-<img src="1.JPG"/>
+![](1.JPG)
 Pada soal ini terdapat 2 buah celah yang dapat digunakan untuk mendapatkan 2 buah flag. Flag pertama dapat diperoleh dengan memanfaatkan celah pada AES CTR dengan known partial text dan menggunakan fungsi zlib compress ( dengan asumsi compress akan 
 menghasilkan panjang paling pendek jika string yang sama diulang beberapa kali ). Flag kedua dapat diperoleh dengan memanfaatkan celah bit flip attack pada token yang disediakan melalui fungsi import key. 
 Berikut solver yang kami gunakan
