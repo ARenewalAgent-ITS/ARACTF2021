@@ -45,7 +45,7 @@ for j in range(5):
         for x in tmp:
             target[x]^=57
 ```
-
+<img src="1.JPG"/>
 
 Dan berikut solver untuk keynya
 ```
@@ -224,5 +224,7 @@ class Untitled
     }
 }
 ```
+<img src="2.JPG"/>
+<img src="3.JPG"/>
 
 #### ara2021{9e6843872afa660f54a7a417689e64eb4102ed5c0f959f3f}
