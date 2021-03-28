@@ -8,5 +8,6 @@ Seorang tersangka kejahatan digital suka memindahkan file sensitif dengan cara t
 3. memfilter protocol usbms dan sort dari length paket data paling besar.
 4. export bytes dari paket tersebut menjadi suatu file zip. Dengan password dari keystroke
 5. Buka file zip readme.txt
-Lebih lengkapnya bisa dilihat di (solusi)[Hub-Solution.pdf]
+
+Lebih lengkapnya bisa dilihat di [solusi](Hub-Solution.pdf)
 #### ara2021{password_zip_alay_tapi_flag_jangan_alay}
