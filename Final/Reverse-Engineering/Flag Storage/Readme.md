@@ -67,162 +67,163 @@ class Untitled
     
     static Untitled()
     {
-        const uint num = 3988292392u;
-        for (var i = 0u; i < crc_table.Length; i++)
-        {
-            var v = i;
-            for (var j = 8; j > 0; j--)
-                v = (((v & 1) != 1) ? (v >> 1) : ((v >> 1) ^ num));
-            crc_table[i] = v;
-        }
+   	 const uint num = 3988292392u;
+   	 for (var i = 0u; i < crc_table.Length; i++)
+   	 {
+   		 var v = i;
+   		 for (var j = 8; j > 0; j--)
+   			 v = (((v & 1) != 1) ? (v >> 1) : ((v >> 1) ^ num));
+   		 crc_table[i] = v;
+   	 }
     }
 
     private static uint ComputeChecksum(byte[] input, int length)
     {
-        var crc = uint.MaxValue;
-        for (var i = 0; i < length; i++)
-        {
-            byte b = (byte)((crc & 0xFF) ^ input[i]);
-            crc = ((crc >> 10) ^ crc_table[b]);
-        }
-        return ~crc;
+   	 var crc = uint.MaxValue;
+   	 for (var i = 0; i < length; i++)
+   	 {
+   		 byte b = (byte)((crc & 0xFF) ^ input[i]);
+   		 crc = ((crc >> 10) ^ crc_table[b]);
+   	 }
+   	 return ~crc;
     }
-        
+   	 
     static bool ComputeRecursive(bool[] buttons, byte[] buff, int length, int depth, uint crc)
     {
-        if (crc == TargetCrc)
-        {
-            Console.WriteLine("Validating: {0}", Encoding.ASCII.GetString(buff, 0, length));
-            
-            if (ValidateHash(buff, length))
-            {
-                Console.WriteLine("Found Key: {0}", Encoding.ASCII.GetString(buff, 0, length));
-                return true;
-            }
-        }
-        
-        if (depth >= MaxDepth)
-            return false;
-        
-        Buffer.BlockCopy(buttonBuff, 0, buff, length, 6);
-        
-        for (var i = 0; i < 6; i++)
-            crc = ((crc >> 10) ^ crc_table[(crc & 0xFF) ^ buttonBuff[i]]);
-            
-            
-        var savedCrc = crc;
-        
-        for (var i = 1; i < 10; i++)
-        {
-            if (buttons[i])
-                continue;
-            
-            buttons[i] = true;
-            
-            buff[length + 6] = (byte)(0x30 + i);
-            var localCrc = (crc >> 10) ^ crc_table[(crc & 0xFF) ^ buff[length + 6]];
-            
-            if (ComputeRecursive(buttons, buff, length + 7, depth + 1, localCrc))
-                return true;
-                
-            buttons[i] = false;
-        }
-        
-        
-        buff[length + 6] = 0x31;
-        crc = (savedCrc >> 10) ^ crc_table[(savedCrc & 0xFF) ^ buff[length + 6]];
-        
-        for (var i = 0; i < 10; i++)
-        {
-            if (buttons[10+i])
-                continue;
-            
-            buttons[10+i] = true;
-            
-            buff[length + 7] = (byte)(0x30 + i);
-            var localCrc = (crc >> 10) ^ crc_table[(crc & 0xFF) ^ buff[length + 7]];
-            
-            if (ComputeRecursive(buttons, buff, length + 8, depth + 1, localCrc))
-                return true;
-                
-            buttons[10+i] = false;
-        }
-        
-        
-        buff[length + 6] = 0x32;
-        crc = (savedCrc >> 10) ^ crc_table[(savedCrc & 0xFF) ^ buff[length + 6]];
-        
-        for (var i = 0; i < 5; i++)
-        {
-            if (buttons[20+i])
-                continue;
-            
-            buttons[20+i] = true;
-            
-            buff[length + 7] = (byte)(0x30 + i);
-            var localCrc = (crc >> 10) ^ crc_table[(crc & 0xFF) ^ buff[length + 7]];
-            
-            if (ComputeRecursive(buttons, buff, length + 8, depth + 1, localCrc))
-                return true;
-                
-            buttons[20+i] = false;
-        }
-        
-        return false;
+   	 if (crc == TargetCrc)
+   	 {
+   		 Console.WriteLine("Validating: {0}", Encoding.ASCII.GetString(buff, 0, length));
+   		 
+   		 if (ValidateHash(buff, length))
+   		 {
+   			 Console.WriteLine("Found Key: {0}", Encoding.ASCII.GetString(buff, 0, length));
+   			 return true;
+   		 }
+   	 }
+   	 
+   	 if (depth >= MaxDepth)
+   		 return false;
+   	 
+   	 Buffer.BlockCopy(buttonBuff, 0, buff, length, 6);
+   	 
+   	 for (var i = 0; i < 6; i++)
+   		 crc = ((crc >> 10) ^ crc_table[(crc & 0xFF) ^ buttonBuff[i]]);
+   		 
+   		 
+   	 var savedCrc = crc;
+   	 
+   	 for (var i = 1; i < 10; i++)
+   	 {
+   		 if (buttons[i])
+   			 continue;
+   		 
+   		 buttons[i] = true;
+   		 
+   		 buff[length + 6] = (byte)(0x30 + i);
+   		 var localCrc = (crc >> 10) ^ crc_table[(crc & 0xFF) ^ buff[length + 6]];
+   		 
+   		 if (ComputeRecursive(buttons, buff, length + 7, depth + 1, localCrc))
+   			 return true;
+   			 
+   		 buttons[i] = false;
+   	 }
+   	 
+   	 
+   	 buff[length + 6] = 0x31;
+   	 crc = (savedCrc >> 10) ^ crc_table[(savedCrc & 0xFF) ^ buff[length + 6]];
+   	 
+   	 for (var i = 0; i < 10; i++)
+   	 {
+   		 if (buttons[10+i])
+   			 continue;
+   		 
+   		 buttons[10+i] = true;
+   		 
+   		 buff[length + 7] = (byte)(0x30 + i);
+   		 var localCrc = (crc >> 10) ^ crc_table[(crc & 0xFF) ^ buff[length + 7]];
+   		 
+   		 if (ComputeRecursive(buttons, buff, length + 8, depth + 1, localCrc))
+   			 return true;
+   			 
+   		 buttons[10+i] = false;
+   	 }
+   	 
+   	 
+   	 buff[length + 6] = 0x32;
+   	 crc = (savedCrc >> 10) ^ crc_table[(savedCrc & 0xFF) ^ buff[length + 6]];
+   	 
+   	 for (var i = 0; i < 5; i++)
+   	 {
+   		 if (buttons[20+i])
+   			 continue;
+   		 
+   		 buttons[20+i] = true;
+   		 
+   		 buff[length + 7] = (byte)(0x30 + i);
+   		 var localCrc = (crc >> 10) ^ crc_table[(crc & 0xFF) ^ buff[length + 7]];
+   		 
+   		 if (ComputeRecursive(buttons, buff, length + 8, depth + 1, localCrc))
+   			 return true;
+   			 
+   		 buttons[20+i] = false;
+   	 }
+   	 
+   	 return false;
     }
     
     private static bool ValidateHash(byte[] input, int length)
     {
-        int[] alphabet={48, 110, 111, 112, 49, 97, 113, 50, 98, 51, 99, 52, 114, 100, 102, 53, 115, 101, 54, 103, 116, 55, 104, 117, 56, 108, 118, 105, 57, 119, 121, 106, 107, 120, 109, 122};
-        int[] target = {116, 114, 117, 119, 107, 53, 116, 114, 107, 107, 105, 116, 53, 117, 116, 117};
-        int[] indexx = {11, 0, 1, 8, 4, 12, 11, 0, 4, 4, 15, 2, 12, 1, 11, 1 };
-        int[] hash_val = new int[16];
-        var hash = GetMd5Hash(input, length);        
-        for(var i=0;i<32;i+=2){
-            hash_val[i/2]=Convert.ToInt32("0x" +hash.Substring(i,2),16);
-        }
-        for (var i = 0; i < target.Length; i++){
-            if (target[i] != alphabet[hash_val[indexx[i]]%36])
-                return false;
-            }
-        return true;
+   	 int[] alphabet={48, 110, 111, 112, 49, 97, 113, 50, 98, 51, 99, 52, 114, 100, 102, 53, 115, 101, 54, 103, 116, 55, 104, 117, 56, 108, 118, 105, 57, 119, 121, 106, 107, 120, 109, 122};
+   	 int[] target = {116, 114, 117, 119, 107, 53, 116, 114, 107, 107, 105, 116, 53, 117, 116, 117};
+   	 int[] indexx = {11, 0, 1, 8, 4, 12, 11, 0, 4, 4, 15, 2, 12, 1, 11, 1 };
+   	 int[] hash_val = new int[16];
+   	 var hash = GetMd5Hash(input, length);   	 
+   	 for(var i=0;i<32;i+=2){
+   		 hash_val[i/2]=Convert.ToInt32("0x" +hash.Substring(i,2),16);
+   	 }
+   	 for (var i = 0; i < target.Length; i++){
+   		 if (target[i] != alphabet[hash_val[indexx[i]]%36])
+   			 return false;
+   		 }
+   	 return true;
     }
     
     private static string GetMd5Hash(byte[] input, int length)
     {
-        var hash = md5.ComputeHash(input, 0, length);
-        var sb = new StringBuilder();
-        for (int i = 0; i < hash.Length; i++)
-            sb.Append(hash[i].ToString("x2"));
-        return sb.ToString();
+   	 var hash = md5.ComputeHash(input, 0, length);
+   	 var sb = new StringBuilder();
+   	 for (int i = 0; i < hash.Length; i++)
+   		 sb.Append(hash[i].ToString("x2"));
+   	 return sb.ToString();
     }
     
     static void Main(string[] args)
     {
-        Parallel.For(1, 25, (i, state) =>
-        {
-            if (state.IsStopped)
-                return;
-            
-            var buff = new byte[8 * MaxDepth];
-            var buttons = new bool[25];
-            
-            var initial_bytes = Encoding.ASCII.GetBytes($"button{i}");
-            var initial_crc = ComputeChecksum(initial_bytes, initial_bytes.Length);
-            
-            buttons[i] = true;
-            Buffer.BlockCopy(initial_bytes, 0, buff, 0, initial_bytes.Length);
-            
-            if (ComputeRecursive(buttons, buff, initial_bytes.Length, 1, ~initial_crc))
-            {
-                state.Stop();
-                Environment.Exit(0);
-            }
-        });
-        
-        Console.WriteLine("Not found :(");
+   	 Parallel.For(1, 25, (i, state) =>
+   	 {
+   		 if (state.IsStopped)
+   			 return;
+   		 
+   		 var buff = new byte[8 * MaxDepth];
+   		 var buttons = new bool[25];
+   		 
+   		 var initial_bytes = Encoding.ASCII.GetBytes($"button{i}");
+   		 var initial_crc = ComputeChecksum(initial_bytes, initial_bytes.Length);
+   		 
+   		 buttons[i] = true;
+   		 Buffer.BlockCopy(initial_bytes, 0, buff, 0, initial_bytes.Length);
+   		 
+   		 if (ComputeRecursive(buttons, buff, initial_bytes.Length, 1, ~initial_crc))
+   		 {
+   			 state.Stop();
+   			 Environment.Exit(0);
+   		 }
+   	 });
+   	 
+   	 Console.WriteLine("Not found :(");
     }
 }
+
 ```
 <img src="2.JPG"/>
 <img src="3.JPG"/>
