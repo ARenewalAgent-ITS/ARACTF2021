@@ -5,9 +5,9 @@ Waduh program untuk mengembalikan passwordku corrupt dan sekarang hanya hanya te
 
 Secured password : e4 ff 9b c8 25 92 55  0 d4 85 6c ca  6 9b 4e  b
 ## Solusi
-Diberikan sebuah file ELF yang dibuat menggunakan bahasa pemrograman GO. Kita dapat mengetahui fungsi main dari program tersebut dengan cara melakukan penelusuran struktur fungsi main pada program golang yaitu main_main 
-Selanjutnya kita tinggal melakukan analisis terhadap fungsi enkripsi yang ada dan ternyata algoritma yang diterapkan adalah RSA. Yang mana nilai q adalah komplemen dari p*2020. Selanjutnya kita tinggal mencari cara untuk mendapatkan private key dari RSA. Ternyata kita bisa mendapatkan nilai p dan q dengan melakukan akar kuadrat terhadap nilai yang telah ditemukan berdasarkan ke valid an nilai masknya ( kuadrat atau bukan ). 
-Berikut solver yang digunakan
+Disini dengan menggunakan IDA Kita dapat menemukan bahwa algoritma enkripsi yang digunakan adalah AES dan untuk key yang digunakan adalah perpaduan seed random dan random dengan algoritma sendiri. Jadi disini kita hanya perlu mengkonversi kodingan tersebut ke bahasa pemrograman yang paling kita mengerti dan menjalankannya, disini saya menggunakan z3 untuk mendapatkan key2 yang sesuai dengan key1 yang mana key1 nya kita bruteforce mulai dari 0 sampai < 100 yang merupakan kelipatan 7. Dan selanjutnya tingggal melakukan decrypt aes menggunakan key tersebut ( 16 byte terakhir yang di reverse ) dan terakhir menampilkan flag dengan cara melakukan xor kembali dengan seed value dan di reverse.
+Berikut solver yang saya gunakan
+
 ```
 from z3 import *
 import ctypes
